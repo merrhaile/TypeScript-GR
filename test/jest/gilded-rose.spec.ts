@@ -26,6 +26,21 @@ describe("Gilded Rose", () => {
     expect(items[0].quality).toBe(50);
   });
 
+  it("Quality value should be 42 ", () => {
+    const gildedRose = new GildedRose([
+      new Item("Backstage passes to a TAFKAL80ETC concert", 6, 40),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(42);
+  });
+  it("Quality value should be 41 ", () => {
+    const gildedRose = new GildedRose([
+      new Item("Backstage passes to a TAFKAL80ETC concert", 16, 40),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(41);
+  });
+
   it("should decrease quality by 1", () => {
     const gildedRose = new GildedRose([new Item("foo", 1, 4)]);
     const items = gildedRose.updateQuality();
